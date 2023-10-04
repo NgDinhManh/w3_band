@@ -235,12 +235,14 @@ html{
 /* Places */
 .places-list{
     margin: 32px -8px 0;
-    display: inline-flex;
+    /* display: inline-flex; */
     padding-bottom: 48px;
 }
 
 .place-item{
+    float: left;
     width: 33.3333%;
+    box-sizing: border-box;
     padding: 0 8px;
 }
 
