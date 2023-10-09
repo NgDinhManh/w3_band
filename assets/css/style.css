@@ -6,6 +6,7 @@
 
 html{
     font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /*
@@ -29,9 +30,58 @@ html{
     color: #fff !important;
 }
 
-/* #main{
+.text-center {
+    text-align: center !important;
+}
 
-} */
+.pull-right {
+    float: right !important;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third {
+    width: 33.33333%;
+    box-sizing: border-box;
+}
+
+.col-half {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.col-full {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Main */
+#main{
+
+}
 
 #header{
     height: 46px;
@@ -142,14 +192,9 @@ html{
     margin-top: 25px;
 }
 
-
-/* #content{
-
-} */
-
 #content .content-section {
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -177,12 +222,6 @@ html{
 
 #content .member-list{
     margin-top: 48px;
-}
-
-#content .member-item {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
 }
 
 #content .member-name {
@@ -234,16 +273,8 @@ html{
 
 /* Places */
 .places-list{
-    margin: 32px -8px 0;
-    /* display: inline-flex; */
-    padding-bottom: 48px;
-}
-
-.place-item{
-    float: left;
-    width: 33.3333%;
-    box-sizing: border-box;
-    padding: 0 8px;
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
 
 .place-img{
@@ -277,25 +308,91 @@ html{
     line-height: 1.4px;
 }
 
-.place-buy-btn{
+.btn{
     color: #fff;
     background-color: #000;
     text-decoration: none;
     padding: 11px 16px;
     display: inline-block;
     margin-top: 15px;
+    cursor: pointer;
+    border: none;
 }
 
-.place-buy-btn:hover {
+.btn:hover {
     color: #000;
     background-color: #ccc;
 }
 
-
-#footer{
-
+/* Contact From */
+.contact-content {
+    margin-top: 48px;
 }
 
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .right {
+    position: absolute;
+    right: 0;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Map section */
+.map-section img {
+    width: 100%;
+}
+
+/* Footer section */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+    /* font-size: 24px; */
+}
+
+#footer .socials-list {
+    font-size: 24px;
+}
+
+#footer .socials-list a {
+    color: #00000088;
+    text-decoration: none;
+}
+
+#footer .socials-list a:hover {
+    color: #00000055;
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: #00000088;
+}
+
+#footer .copyright a {
+    margin-top: 15px;
+    color: #00000088;
+}
+
+/* Modal */
 .modal {
     position: fixed;
     top: 0;
@@ -303,4 +400,105 @@ html{
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-container {
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    max-width: calc(100% - 32px);
+    animation: modalFaceIn ease 0.5s;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.modal-heading-icon {
+    margin-right: 10px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#by-tickets {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    transform: uppercase;
+    box-sizing: border-box;
+    padding: 18px;
+    cursor: pointer;
+}
+
+#by-tickets:hover {
+    opacity: 0.8;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+
+}
+
+.modal-footer a {
+    color: #2196f3;
+}
+
+@keyframes modalFaceIn {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
